@@ -115,6 +115,19 @@ export class MemStorage implements IStorage {
   async createEnergyData(insertData: InsertEnergyData): Promise<EnergyData> {
     const id = randomUUID();
     const data: EnergyData = { 
+      solarGeneration: 0,
+      windGeneration: 0,
+      batteryLevel: 0,
+      batteryHealth: 100,
+      batteryTemperature: 25,
+      batteryCycles: 0,
+      gridStatus: true,
+      gridLoad: 0,
+      gridFrequency: 50,
+      householdConsumption: 0,
+      totalGeneration: 0,
+      totalConsumption: 0,
+      efficiency: 0,
       ...insertData, 
       id, 
       timestamp: new Date(),
