@@ -52,75 +52,32 @@ export default function Control() {
           <CardHeader>
             <CardTitle className="flex items-center">
               <Battery className="w-5 h-5 mr-2" />
-              Battery Management
+              Home Management
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
-            <div>
-              <label className="text-sm font-medium mb-2 block">Battery Mode</label>
-              <div className="grid grid-cols-3 gap-2">
-                {['auto', 'charge', 'discharge'].map((mode) => (
-                  <Button
-                    key={mode}
-                    variant={batteryMode === mode ? 'default' : 'outline'}
-                    size="sm"
-                    onClick={() => setBatteryMode(mode)}
-                    data-testid={`button-battery-mode-${mode}`}
-                    className="capitalize"
-                  >
-                    {mode}
-                  </Button>
-                ))}
-              </div>
-            </div>
 
-            <div>
-              <label className="text-sm font-medium mb-2 block">
-                Max Charge Level: {maxChargeLevel[0]}%
-              </label>
-              <Slider
-                value={maxChargeLevel}
-                onValueChange={setMaxChargeLevel}
-                max={100}
-                min={50}
-                step={5}
-                className="w-full"
-                data-testid="slider-max-charge"
-              />
+            <CardContent className="space-y-4">
+            <div className="flex items-center justify-between">
+              <span className="text-sm">House 1</span>
+              <Switch defaultChecked data-testid="switch-solar-panel-1" />
             </div>
-
-            <div>
-              <label className="text-sm font-medium mb-2 block">
-                Min Discharge Level: {minDischargeLevel[0]}%
-              </label>
-              <Slider
-                value={minDischargeLevel}
-                onValueChange={setMinDischargeLevel}
-                max={50}
-                min={10}
-                step={5}
-                className="w-full"
-                data-testid="slider-min-discharge"
-              />
+            <div className="flex items-center justify-between">
+              <span className="text-sm">House 2</span>
+              <Switch defaultChecked data-testid="switch-solar-panel-2" />
             </div>
-
-            <div className="pt-4 border-t">
-              <p className="text-sm text-muted-foreground mb-2">Current Status</p>
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div>
-                  <span className="text-muted-foreground">Level:</span>
-                  <span className="ml-2 font-medium" data-testid="text-current-battery-level">
-                    {energyData?.batteryLevel.toFixed(0) || '84'}%
-                  </span>
-                </div>
-                <div>
-                  <span className="text-muted-foreground">Health:</span>
-                  <span className="ml-2 font-medium text-green-400" data-testid="text-current-battery-health">
-                    {energyData?.batteryHealth.toFixed(0) || '96'}%
-                  </span>
-                </div>
-              </div>
+            <div className="flex items-center justify-between">
+              <span className="text-sm">House 3</span>
+              <Switch defaultChecked data-testid="switch-solar-panel-3" />
             </div>
+            <div className="flex items-center justify-between">
+              <span className="text-sm">House 4</span>
+              <Switch defaultChecked data-testid="switch-solar-panel-4" />
+            </div>
+            
+            
+          </CardContent>
+            
           </CardContent>
         </Card>
 

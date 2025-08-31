@@ -12,9 +12,10 @@ import {
 
 const navigationItems = [
   { path: "/", icon: LayoutDashboard, label: "Dashboard" },
+  { path: "/control", icon: Settings2, label: "Control Panel" },
   { path: "/alerts", icon: AlertTriangle, label: "Alerts & Notifications", badge: 3 },
   { path: "/household", icon: Home, label: "Household Usage" },
-  { path: "/control", icon: Settings2, label: "Control Panel" },
+  
   { path: "/reports", icon: BarChart3, label: "Reports & Analytics" },
   { path: "/settings", icon: Settings, label: "Settings & Language" },
   { path: "/help", icon: HelpCircle, label: "Help & Training" },
